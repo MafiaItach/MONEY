@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Money Management App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Money Management App</h1>
+    
+    <form id="transactionForm">
+      <button id="payingPerson">Bipul paying</button>
+      <label for="amount">Amount:</label>
+      <input type="number" id="amount" placeholder="Enter amount">
+      <button type="submit" id="addTransaction">Add</button>
+    </form>
+    
+    <div class="transactions" id="transactions"></div>
+    <div class="summary" id="summary"></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
