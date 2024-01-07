@@ -49,8 +49,8 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.removeItem('summary');
     savedTransactions.length = 0;
     transactionList.innerHTML = ''; // Clear transaction history
-    friend1Summary.textContent = 'Bipul Total: INR 0.00'; // Reset summary
-    friend2Summary.textContent = 'Subho Total: INR 0.00';
+    friend1Summary.textContent = 'Bipul Total: ₹ 0.00'; // Reset summary
+    friend2Summary.textContent = 'Subho Total: ₹ 0.00';
     debtSummary.textContent = '';
   });
 
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function addTransaction(amount, date, payer) {
     const payerName = payer === 'friend1' ? 'Bipul' : 'Subho';
     const receiver = payer === 'friend1' ? 'Subho' : 'Bipul';
-    const transactionText = `${payerName} paid INR ${amount.toFixed(2)} for ${receiver} on ${date}`;
+    const transactionText = `${payerName} paid ₹ ${amount.toFixed(2)} for ${receiver} on ${date}`;
 
     addTransactionToDOM(transactionText);
     savedTransactions.push(transactionText);
@@ -84,14 +84,14 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function updateSummary() {
-    friend1Summary.textContent = `Bipul Total: INR ${totalFriend1.toFixed(2)}`;
-    friend2Summary.textContent = `Subho Total: INR ${totalFriend2.toFixed(2)}`;
+    friend1Summary.textContent = `Bipul Total: ₹ ${totalFriend1.toFixed(2)}`;
+    friend2Summary.textContent = `Subho Total: ₹ ${totalFriend2.toFixed(2)}`;
 
     const debtAmount = Math.abs(totalFriend1 - totalFriend2);
     if (totalFriend1 > totalFriend2) {
-      debtSummary.textContent = `Subho Will pay back Bipul: INR ${debtAmount.toFixed(2)}`;
+      debtSummary.textContent = `Subho Will pay back Bipul: ₹ ${debtAmount.toFixed(2)}`;
     } else if (totalFriend2 > totalFriend1) {
-      debtSummary.textContent = `Bipul Will pay back Subho: INR ${debtAmount.toFixed(2)}`;
+      debtSummary.textContent = `Bipul Will pay back Subho: ₹ ${debtAmount.toFixed(2)}`;
     } else {
       debtSummary.textContent = 'No debts between friends.';
     }
