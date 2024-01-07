@@ -1,38 +1,103 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .container {
-    width: 80%;
-    margin: 0 auto;
-  }
-  
-  h1 {
-    text-align: center;
-  }
-  
-  .transactions {
-    margin-bottom: 20px;
-  }
-  
-  form {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  label {
-    margin-right: 10px;
-  }
-  
-  input[type="number"] {
-    padding: 5px;
-  }
-  
-  button {
-    padding: 5px 10px;
-    cursor: pointer;
-  }
-  
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f2f2f2;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
+
+main {
+  padding: 20px;
+}
+
+/* .switch-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+} */
+
+.switch-container label {
+  margin-right: 10px;
+}
+
+.transactions {
+  border: 1px solid #ccc;
+  padding: 10px;
+  max-height: 200px;
+  overflow-y: auto;
+  margin-bottom: 20px;
+  background-color: #fff;
+}
+
+.transactions p {
+  margin: 5px 0;
+  color: #333;
+}
+
+form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+form input,
+form button {
+  padding: 10px;
+}
+
+form input[type="number"],
+form button {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #333;
+}
+
+.summary {
+  background-color: #fff;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-top: 20px;
+}
+
+.summary h2 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.summary p {
+  color: #555;
+  margin: 5px 0;
+}
+/* ... (previous CSS code) ... */
+
+input[type="radio"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  width: 20px; /* Adjust size as needed */
+  height: 20px; /* Adjust size as needed */
+  margin-right: 10px;
+  outline: none;
+}
+
+input[type="radio"]:checked {
+  background-color: #333;
+}
+
+/* ... (remaining CSS code) ... */
+.con{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
