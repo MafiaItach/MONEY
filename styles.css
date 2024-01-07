@@ -52,12 +52,12 @@ form button {
   padding: 10px;
 }
 
-form input[type="number"],
-form button {
+form input[type="number"] {
   border: 1px solid #ccc;
   border-radius: 4px;
   background-color: #fff;
   color: #333;
+  width: 76%;
 }
 
 .summary {
@@ -99,5 +99,13 @@ input[type="radio"]:checked {
   display: flex;
   justify-content: center;
   align-items: center;
-
+  margin: 10px;
+}
+button{
+  width: 24%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #333;
+ 
 }
