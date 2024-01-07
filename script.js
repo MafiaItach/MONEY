@@ -4,6 +4,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const friend1Summary = document.getElementById('friend1-summary');
   const friend2Summary = document.getElementById('friend2-summary');
   const debtSummary = document.getElementById('debt-summary');
+  const clearAllButton = document.getElementById('clear-all');
+  const transactionsSection = document.querySelector('.transactions');
+
 
   let currentPayer = 'friend1'; // Assuming friend1 starts as payer
   let totalFriend1 = 0;
@@ -41,6 +44,15 @@ document.addEventListener('DOMContentLoaded', () => {
     updateLocalStorage();
     form.reset();
   });
+  clearAllButton.addEventListener('click', () => {
+    localStorage.removeItem('transactions');
+    localStorage.removeItem('summary');
+    savedTransactions.length = 0;
+    transactionList.innerHTML = ''; // Clear transaction history
+    friend1Summary.textContent = 'Bipul Total: INR 0.00'; // Reset summary
+    friend2Summary.textContent = 'Subho Total: INR 0.00';
+    debtSummary.textContent = '';
+  });
 
   const payerRadios = document.querySelectorAll('input[name="payer"]');
   payerRadios.forEach((radio) => {
@@ -49,16 +61,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  function addTransactionToDOM(transaction) {
+   // Function to add transaction to the DOM
+   function addTransactionToDOM(transaction) {
     const transactionElement = document.createElement('p');
     transactionElement.textContent = transaction;
-    transactionList.prepend(transactionElement);
+    transactionsSection.appendChild(transactionElement);
   }
 
   function addTransaction(amount, date, payer) {
-    const payerName = payer === 'friend1' ? 'Friend 1' : 'Friend 2';
-    const receiver = payer === 'friend1' ? 'Friend 2' : 'Friend 1';
-    const transactionText = `${payerName} paid $${amount.toFixed(2)} for ${receiver} on ${date}`;
+    const payerName = payer === 'friend1' ? 'Bipul' : 'Subho';
+    const receiver = payer === 'friend1' ? 'Subho' : 'Bipul';
+    const transactionText = `${payerName} paid INR ${amount.toFixed(2)} for ${receiver} on ${date}`;
 
     addTransactionToDOM(transactionText);
     savedTransactions.push(transactionText);
@@ -71,14 +84,14 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function updateSummary() {
-    friend1Summary.textContent = `Friend 1 Total: $${totalFriend1.toFixed(2)}`;
-    friend2Summary.textContent = `Friend 2 Total: $${totalFriend2.toFixed(2)}`;
+    friend1Summary.textContent = `Bipul Total: INR ${totalFriend1.toFixed(2)}`;
+    friend2Summary.textContent = `Subho Total: INR ${totalFriend2.toFixed(2)}`;
 
     const debtAmount = Math.abs(totalFriend1 - totalFriend2);
     if (totalFriend1 > totalFriend2) {
-      debtSummary.textContent = `Friend 2 owes Friend 1: $${debtAmount.toFixed(2)}`;
+      debtSummary.textContent = `Subho Will pay back Bipul: INR ${debtAmount.toFixed(2)}`;
     } else if (totalFriend2 > totalFriend1) {
-      debtSummary.textContent = `Friend 1 owes Friend 2: $${debtAmount.toFixed(2)}`;
+      debtSummary.textContent = `Bipul Will pay back Subho: INR ${debtAmount.toFixed(2)}`;
     } else {
       debtSummary.textContent = 'No debts between friends.';
     }
@@ -88,3 +101,5 @@ document.addEventListener('DOMContentLoaded', () => {
     savedSummary.totalFriend2 = totalFriend2;
   }
 });
+
+
