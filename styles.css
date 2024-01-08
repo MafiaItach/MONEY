@@ -25,6 +25,10 @@ main {
 
 .switch-container label {
   margin-right: 10px;
+  
+    DISPLAY: FLEX;
+    ALIGN-ITEMS: CENTER;
+
 }
 
 .transactions {
