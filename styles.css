@@ -34,8 +34,6 @@ main {
 .TRA {
   border-radius: 8px;
   padding: 10px;
-  max-height: 200px;
-  overflow-y: auto;
   margin-bottom: 20px;
   background-color:  #042f66;
   margin-top: 10px;
