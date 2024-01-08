@@ -66,6 +66,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const transactionElement = document.createElement('p');
     transactionElement.textContent = transaction;
     transactionsSection.appendChild(transactionElement);
+    if (transactionsSection.firstChild) {
+      transactionsSection.insertBefore(transactionElement, transactionsSection.firstChild);
+    } else {
+      transactionsSection.appendChild(transactionElement);
+    }
   }
 
   function addTransaction(amount, date, payer) {
