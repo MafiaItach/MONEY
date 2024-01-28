@@ -4,11 +4,11 @@
 ONLY FOR SHUBHAM AND DIBYENDU
 
 
-https://shubham01015.github.io/MONEY/
+https://MafiaItachi.github.io/MONEY/
 
 
 ```bash
-    git clone https://github.com/MafiaItach/MONEY.git
+    git clone https://github.com/MafiaItachi/MONEY.git
 ```
 ```bash
     cd MONEY
