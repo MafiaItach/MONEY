@@ -8,17 +8,17 @@ https://shubham01015.github.io/MONEY/
 
 
 ```bash
-    git clone https://github.com/shubham01015/MONEY.git
+    git clone https://github.com/MafiaItach/MONEY.git
 ```
 ```bash
     cd MONEY
 ```
 
 ```bash
-    add .
+    git add .
 ```
 ```bash
-     git commit -m "your commant"
+     git commit -m "your commit"
 ```
 ```bash
     git status
