@@ -13,14 +13,19 @@ https://shubham01015.github.io/MONEY/
 ```bash
     cd MONEY
 ```
+
 ```bash
     add .
-``````bash
+```
+```bash
      git commit -m "your commant"
-``````bash
+```
+```bash
     git status
-``````bash
+```
+```bash
     git push
-``````bash
+```
+```bash
     about:config
 ```
